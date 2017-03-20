@@ -270,7 +270,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://zhengluqiang.github.io/2017/03/20/test-md/">
+    <link itemprop="mainEntityOfPage" href="https://zhengluqiang.github.io/2017/03/20/Java-Object-oriented-programming-part-1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yummmy">
@@ -292,8 +292,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/03/20/test-md/" itemprop="url">
-                  test.md
+                <a class="post-title-link" href="/2017/03/20/Java-Object-oriented-programming-part-1/" itemprop="url">
+                  Java基础：面向对象（1）--对象的概念、成员变量与局部变量、匿名对象、类的封装
                 </a>
               
             
@@ -309,7 +309,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-20T17:42:22+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-20T18:58:57+08:00">
                 2017-03-20
               </time>
             
@@ -320,6 +320,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java基础笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">Java基础笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -328,8 +350,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/03/20/test-md/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/20/test-md/" itemprop="commentCount"></span>
+                <a href="/2017/03/20/Java-Object-oriented-programming-part-1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/20/Java-Object-oriented-programming-part-1/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -357,7 +379,105 @@
       
         
           
-            
+            <h2 id="一-对象和类的概念"><a href="#一-对象和类的概念" class="headerlink" title="一.对象和类的概念"></a>一.对象和类的概念</h2><ol>
+<li><p>对象：真实存在的唯一事物</p>
+</li>
+<li><p>类：同一事物的公共属性与行为的抽取</p>
+</li>
+<li><p>面向对象的核心思想：找适合的对象做适合的事情</p>
+</li>
+<li><p>找对象的方式：</p>
+<pre><code>1.自定义类，然后创建对象
+2.使用sun给我们提供的类创建对象
+3.在java的世界中，是先有类后有对象的
+</code></pre></li>
+<li><p>如何自定义类创建对象？</p>
+<pre><code>1.自定义类
+    格式：
+        class 类名 {}
+2.通过自定义创建对象
+    格式：
+        类名 变量名 = new 类名();
+</code></pre></li>
+<li><p>如何访问对象的属性或者调用对象的方法？</p>
+<pre><code>1.访问对象的属性：
+    格式：
+        对象名.属性名
+2. 调用对象的方法：
+    格式：
+        对象名.方法名();
+</code></pre></li>
+</ol>
+<hr>
+<h2 id="二、成员变量和局部变量的区别"><a href="#二、成员变量和局部变量的区别" class="headerlink" title="二、成员变量和局部变量的区别"></a>二、成员变量和局部变量的区别</h2><ol>
+<li><p>定义的位置上区别：    </p>
+<pre><code>成员变量定义在方法之外，类之内的。
+局部变量是定义在方法内部
+</code></pre></li>
+<li><p>作用上的区别：</p>
+<pre><code>成员变量用于描述一类事物的公共属性
+局部变量只是提供一个变量给方法内部使用而已
+</code></pre></li>
+<li><p>生命周期的区别：</p>
+<pre><code>成员变量是随着对象的创建而存在“堆”内存中的，随对象的消失而消失。
+局部变量是执行了对应的方法创建局部变量语句的时候在“栈”内存中存在的，局部变量一旦出了自己的作用域，那么就会马上从内存中消失。
+</code></pre></li>
+<li><p>初始值的区别：</p>
+<pre><code>成员变量都有默认的初始值，因此可以不用赋初值就可以使用了；局部变量是没有默认初始值的，必须要经过赋初值才能使用
+成员变量默认初始值如下：    
+    byte、short、int : 0；
+    long：0L
+    float：0.0f
+    double：0.0
+    char：&apos;&apos;
+    String：null
+</code></pre></li>
+</ol>
+<hr>
+<h2 id="三、匿名对象"><a href="#三、匿名对象" class="headerlink" title="三、匿名对象"></a>三、匿名对象</h2><ol>
+<li><p>什么是匿名对象</p>
+<pre><code>就是没有引用类型变量指向的对象就是匿名对象
+</code></pre></li>
+<li><p>匿名对象的格式</p>
+<pre><code>new 类名();
+</code></pre></li>
+<li><p>匿名对象要注意的事项：</p>
+<pre><code>1.一般不能给匿名对象赋予属性值，因为永远都无法获取到
+2.两个匿名对象永远都不可以能是同一个对象，因为只要遇到new关键字创建的对象，它都是一个新的对象
+3.匿名对象的出现只是为了简化书写
+</code></pre></li>
+<li><p>匿名对象有什么用？</p>
+<pre><code>1.如果只调用该对象的方法只是一次而已就不再使用了，那么就可以使用匿名对象简化书写。
+2.作为实参传递，调用另一个方法
+</code></pre></li>
+</ol>
+<hr>
+<h2 id="四、类的封装"><a href="#四、类的封装" class="headerlink" title="四、类的封装"></a>四、类的封装</h2><ol>
+<li><p>为什么要封装</p>
+<pre><code>为了解决数据在访问的时候出现安全隐患
+</code></pre></li>
+<li><p>两个常用的权限修饰符</p>
+<pre><code>1.public：公用的，使用public修饰的成员属性任何人都可以直接访问
+</code></pre></li>
+</ol>
+<ol>
+<li><p>封装的步骤</p>
+<pre><code>1.使用private修饰需要被封装起来的属性
+2.提供公共的方法设置或者获取封装起来的成员属性
+3.公共的方法的命名规范：
+            public void setXxx(参数列表){ }
+            public 返回值类型 getXxx( ){ }
+</code></pre></li>
+<li><p>对于封装起来的属性，一定要对外提供get和set方法吗？</p>
+<pre><code>封装不一定要提供get或者set方法，这是要看需求而定的。命名也不是一定要使用set和get，这只是一种习惯而已。自要符合标识符的命名规范即可。
+</code></pre></li>
+<li><p>封装的好处</p>
+<pre><code>1.解决了数据的安全问题
+2.操作简单
+3.隐藏实现
+</code></pre></li>
+</ol>
+
           
         
       
@@ -423,7 +543,7 @@
               
                 
                 <a class="post-title-link" href="/2017/03/16/hello-world/" itemprop="url">
-                  独立博客
+                  第一篇文章
                 </a>
               
             
@@ -449,6 +569,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/随笔/" itemprop="url" rel="index">
+                    <span itemprop="name">随笔</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -487,7 +629,7 @@
       
         
           
-            <p>用一下午的时间把博客搭建好了。终于有自己的博客了，以后尽量更新。</p>
+            <p>终于用 <code>hexo</code> 和 <code>github page</code>搭建了自己的个人博客。</p>
 
           
         
@@ -574,7 +716,25 @@
           
 
           
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
 
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
           
 
         </nav>
@@ -582,6 +742,26 @@
         
 
         <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/zhengluqiang" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/u/702d0a1f4976" target="_blank" title="简书">
+                  
+                    <i class="fa fa-fw fa-jianshu"></i>
+                  
+                  简书
+                </a>
+              </span>
+            
           
         </div>
 
